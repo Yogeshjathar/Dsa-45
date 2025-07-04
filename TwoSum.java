@@ -24,7 +24,7 @@ public class TwoSum {
 
         HashMap<Integer, Integer> hm = new HashMap<>();
 
-        // Iterate
+        // Iterate throughj array
         for(int i=0; i<arr.length; i++){
             int complement = sum - arr[i];
 

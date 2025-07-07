@@ -8,12 +8,13 @@ public class GroupAnagrams {
 
     public static void main(String[] args) {
         String  strs[] = {"eat","tea","tan","ate","nat","bat"};
+        // aet -> "eat","tea","ate"
 
         System.out.println("BruteForce: " + groupAnagrams_BruteForec(strs));
         System.out.println("Optimized: " + groupAnagrams_Optimized(strs));
     }
 
-    // Time complexity: O(n * k.log k)
+    // Time complexity: O(n * k.log k) 
     // Space Complexity: O(n * k)
     public static List<List<String>> groupAnagrams_BruteForec(String[] strs) {
         Map<String, List<String>> ans = new HashMap<>();
@@ -24,7 +25,7 @@ public class GroupAnagrams {
 
             String key = new String(chars);
             if(!ans.containsKey(key)){
-								// When we add new string first time
+				// When we add new string first time
                 ans.put(key, new ArrayList<>());
             }
             ans.get(key).add(s);

@@ -36,15 +36,17 @@ public class ReverseLL {
     // Time Complexity: O(n) — visits each node once
     // Space Complexity: O(1) — constant space
     public static Node reverseList(Node head) {
+
+        // Cretae three var prev, curr and next
         Node prev = null;
         Node curr = head;
         Node next = null;
 
         while(curr != null){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+            next = curr.next;   // Update next 
+            curr.next = prev;   // Point to prev node 
+            prev = curr;        // Update prev
+            curr = next;        // Update curr
         }
         head = prev;
 

@@ -8,11 +8,37 @@ public class ThreeSum {
     public static void main(String[] args) {
         int nums[] = {-1,0,1,2,-1,-4}; // output : [[-1, -1, 2], [-1, 0, 1]]
         
+        System.out.println("Output: ");
         System.out.println("BruteForec: "+getThreeSum_BruteForec(nums));
+        System.out.println("Better: "+getThreeSum_Better(nums));
         System.out.println("Optimized: "+getThreeSum_Optimized(nums));
     }
 
+    // Time complexity: O(n^2)
+    // Space complexity: O(n)
     public static List<List<Integer>> getThreeSum_BruteForec(int[] nums){
+        Set<List<Integer>> st = new HashSet<>();
+        int n=nums.length;
+
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for(int k=j+1; k<n; k++){
+                    if(nums[i] + nums[j] + nums[k] == 0){
+                        List<Integer> temp = Arrays.asList(nums[i], nums[j], nums[k]);
+                        temp.sort(null);
+                        st.add(temp);
+                    }
+                }
+            }
+        }
+
+        List<List<Integer>> ans = new ArrayList<>(st);
+        return ans;
+    }
+
+    // Time complexity: O(n^2)
+    // Space complexity: O(n^2)
+    public static List<List<Integer>> getThreeSum_Better(int[] nums){
         Set<List<Integer>> st = new HashSet<>();
         int n=nums.length;
 
@@ -66,6 +92,6 @@ public class ThreeSum {
             }
         }
         return ans;
-        
+
     }
 }

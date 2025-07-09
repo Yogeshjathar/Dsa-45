@@ -15,7 +15,7 @@ public class ThreeSum {
     }
 
     // Time complexity: O(n^2)
-    // Space complexity: O(n)
+    // Space complexity: O(k)  k is no. of unique triplets
     public static List<List<Integer>> getThreeSum_BruteForec(int[] nums){
         Set<List<Integer>> st = new HashSet<>();
         int n=nums.length;
@@ -37,7 +37,7 @@ public class ThreeSum {
     }
 
     // Time complexity: O(n^2)
-    // Space complexity: O(n^2)
+    // Space complexity: O(n+k)
     public static List<List<Integer>> getThreeSum_Better(int[] nums){
         Set<List<Integer>> st = new HashSet<>();
         int n=nums.length;
@@ -63,7 +63,7 @@ public class ThreeSum {
 
 
     // Time complexity: O(n logn) + O(n^2)
-    // Space complexity: O(1)
+    // Space complexity: O(k)               //  for result set otherwise for algorithm it is O(1)
     public static List<List<Integer>> getThreeSum_Optimized(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         
@@ -92,6 +92,5 @@ public class ThreeSum {
             }
         }
         return ans;
-
     }
 }

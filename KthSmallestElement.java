@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class KthSmallestElement{
     public static void main(String[] args) {
-        int num1[] = {2, 3, 6, 7, 9};
+        int num1[] = {3, 5, 6, 7, 9};
         int num2[] = {1,4,8,10};
-        int k=7;
+        int k=3;
 
         int n1 = num1.length;
         int n2 = num2.length;

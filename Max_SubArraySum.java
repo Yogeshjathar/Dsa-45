@@ -22,12 +22,10 @@ public class Max_SubArraySum {
                 for(int k=i;k<=j;k++){
                     curr_sum += numbers[k];
                 }
-                System.out.println(curr_sum);
                 if(max_sum < curr_sum){
                     max_sum = curr_sum;
                 }
             }
-            System.out.println();
         }
         System.out.println("maximum sum of subarrays : "+max_sum);
     }

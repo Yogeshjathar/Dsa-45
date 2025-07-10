@@ -3,15 +3,15 @@ import java.util.Arrays;
 public class KthSmallestElement{
     public static void main(String[] args) {
         int num1[] = {3, 5, 6, 7, 9};
-        int num2[] = {1,4,8,10};
-        int k=3;
+        int num2[] = {1,4,8,10, 11,13}; // 1, 
+        int k=11;
 
         int n1 = num1.length;
         int n2 = num2.length;
         System.out.println("BruteForec: "+getKthSmallest_BruteForec(num1, num2, n1, n2, k));
         System.out.println("Better: "+getKthSmallest_Better(num1, num2, n1, n2, k));
-        System.out.println("Optimized: "+getKthSmallest_Optimized1(num1, num2, n1, n2, k));
-        System.out.println("Optimized: "+getKthSmallest_Optimized2(num1, num2, n1, n2, k));
+        System.out.println("Optimized1: "+getKthSmallest_Optimized1(num1, num2, n1, n2, k));
+        System.out.println("Optimized2: "+getKthSmallest_Optimized2(num1, num2, n1, n2, k));
     }
 
     // Time Complexity: O(n1+n2) * log(n1+n2)
@@ -100,6 +100,26 @@ public class KthSmallestElement{
             if(count == k) return num2[j];
             j++;
         }
+
+        // while(count < ((n1+n2))){
+        //     int val;
+        //     if(i == n1) {
+        //         return num2[j+(k-count-1)];
+        //     } else if (j == n2) {
+        //         return num1[i+(k-count-1)];
+        //     }
+            
+        //     if(num1[i] <= num2[j]){
+        //         val = num1[i];
+        //         i++;
+        //     }else{
+        //         val = num2[j];
+        //         j++;
+        //     }
+        //     count++;
+        //     if(count == k) return val;
+        // }
+
 
         return -1;
     }

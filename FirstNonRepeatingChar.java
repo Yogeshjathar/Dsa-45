@@ -1,4 +1,7 @@
 public class FirstNonRepeatingChar {
+
+    // Time Complexity : O(n)
+    // Space Complexity : O(1) because therw will be most 256 charcter 
     public static char getFirstNonRepeatingChar(String str){
         int freq[] = new int[26];
         for(char ch : str.toCharArray()){
@@ -12,8 +15,9 @@ public class FirstNonRepeatingChar {
         }
         return '\0';
     }
+
     public static void main(String[] args) {
-        String str= "oop";
+        String str= "opo";
         System.out.println(getFirstNonRepeatingChar(str));
     }
 }
